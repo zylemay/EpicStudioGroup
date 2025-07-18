@@ -1,0 +1,141 @@
+/* General Dropdown Styling */
+.navbar-nav .dropdown-menu {
+    background-color: #D8D8D4 !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    min-width: 230px !important; 
+    top: 75% !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    border-radius: 20px !important;
+    transition: all 0.3s ease !important; /* Smoother transition */
+}
+
+/* Show Dropdown on Hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Consistent width and hover effects for dropdown items */
+.navbar-nav .dropdown-menu a {
+    font-size: 13px !important; 
+    padding: 8px 15px !important;
+    white-space: nowrap !important;
+    color: #4e4e4e !important;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    color: #2d2d2d !important;
+    background-color: #bcbcbc !important;
+}
+
+/* Fix for width stability */
+.dropdown-menu {
+    width: 230px !important;
+}
+
+/* Dropdown item padding and font adjustments */
+.dropdown-item {
+    font-size: 12px !important;
+    padding: 10px 15px !important;
+    transition: background-color 0.3s ease !important; /* Smooth hover transition */
+}
+
+/* Dropdown list items margin reset */
+.navbar-nav .dropdown-menu li {
+    margin: 0 !important;
+}
+
+/* Ensure smooth animation for padding changes */
+.nav-item.dropdown:hover .dropdown-menu {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    transition: padding 0.3s ease !important;
+}
+
+
+.nav-link.active, 
+.dropdown-item.active {
+    font-weight: bold; /* Optional: makes the active link bold */
+}
+
+.dropdown-item.active{
+    background-color: #BCBCBC;
+}
+
+/* Base styling for both labels */
+.video-label {
+    color: white;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker and more opaque */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    opacity: 0;
+    text-transform: uppercase;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    transform: translateY(-20px);
+}
+
+/* Keyframe animation for fade and slide */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Trigger animation on page load */
+.before-label {
+    animation: fadeInSlide 1s forwards;
+}
+
+.after-label {
+    animation: fadeInSlide 1s 1s forwards; /* 1s delay for After */
+}
+
+/* Make the video and label more visually clear */
+video {
+    max-width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Scale up video and change opacity on hover */
+video:hover {
+    transform: scale(1.025);
+    opacity: 1; /* Full opacity when hovered */
+}
+
+/* Slight fade-out effect on mouse leave */
+div video {
+    opacity: 0.9; /* Reduced opacity by default */
+}
+
+@media (min-width: 1200px) {
+    .navbar>.container-fluid {
+        padding: 0 2rem;
+    }
+}
+
+.nav-link:focus, 
+.nav-link:active, 
+.dropdown-item:focus, 
+.dropdown-item:active {
+    background-color: transparent; /* Remove default background */
+    outline: none; /* Remove the default outline on focus */
+    box-shadow: none; /* Remove any box-shadow */
+}
+
